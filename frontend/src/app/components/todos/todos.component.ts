@@ -140,7 +140,15 @@ export class TodosComponent implements OnInit {
   }
 
   searchTodo(): void {
-    this.filterTodos();
+    if (this.isDeleted) {
+      this.filteredTodos = this.filterDeletedTodosByTagClass().filter((todo) =>
+        this.filterTodoTextMatch(todo)
+      );
+    } else {
+      this.filteredTodos = this.filterActiveTodosByTagClass().filter((todo) =>
+        this.filterTodoTextMatch(todo)
+      );
+    }
   }
 
   onInputChange(): void {
