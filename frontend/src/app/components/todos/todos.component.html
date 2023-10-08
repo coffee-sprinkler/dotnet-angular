@@ -1,0 +1,74 @@
+<div class="container position-relative mt-3">
+  <div class="row"></div>
+  <div class="row d-flex justify-content-around">
+    <div class="col">
+      <h2>Tasks</h2>
+    </div>
+    <div class="col">
+      <select
+        class="form-select ms-auto w-auto"
+        aria-label="Select todo tags"
+        (change)="onTagClassSelected($event)"
+      >
+        <option value="All" selected>All Tags</option>
+        <option value="Ordinary">Ordinary</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Home">Home</option>
+        <option value="Urgent">Urgent</option>
+        <option value="Important">Important</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Tag</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <ng-container *ngIf="filteredTodos.length > 0; else emptyState">
+          <ng-container *ngFor="let todo of filteredTodos">
+            <tr>
+              <td class="v-middle-align">{{ todo.description }}</td>
+              <td class="v-middle-align">{{ todo.class }}</td>
+              <td class="v-middle-align">
+                <a
+                  class="btn btn-warning text-light pb-0 px-1 me-2"
+                  [routerLink]="['/update', todo.id]"
+                  ><span class="material-symbols-outlined"> edit </span></a
+                >
+                <a
+                  class="btn btn-danger pb-0 px-1"
+                  (click)="deletedTodo(todo.id)"
+                  ><span class="material-symbols-outlined"> delete </span></a
+                >
+              </td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="add-button__container bg-primary">
+    <a class="add-button text-light" [routerLink]="['/new']"
+      ><span class="material-symbols-outlined"> add </span></a
+    >
+  </div>
+</div>
+
+<ng-template #emptyState>
+  <tr>
+    <td
+      align="center"
+      class="v-middle-align"
+      colspan="4"
+      class="v-middle-align"
+    >
+      Empty
+    </td>
+  </tr>
+</ng-template>

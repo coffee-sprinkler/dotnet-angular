@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="row">
+    <form #form="ngForm" (ngSubmit)="addTodo()">
+      <div class="form-floating mb-3">
+        <textarea
+          type="textarea"
+          class="form-control"
+          id="todoNew"
+          name="todoNew"
+          placeholder="Type todo here..."
+          [(ngModel)]="newTodo.description"
+        ></textarea>
+        <label for="todoNew" class="form-label fw-medium">New Todo</label>
+      </div>
+      <div class="tags-color mb-3">
+        <div class="tags">
+          <label class="form-label fw-medium">Tags</label>
+          <div class="d-flex gap-2 flex-wrap">
+            <div *ngFor="let tag of tags">
+              <input
+                type="radio"
+                name="tagSelection"
+                class="btn-check"
+                [id]="tag.value + 'Check'"
+                autocomplete="off"
+                [value]="tag.value"
+                checked
+                [(ngModel)]="newTodo.class"
+              />
+              <label
+                [class]="'btn btn-outline-' + tag.class + ' fw-medium'"
+                [for]="tag.value + 'Check'"
+                >{{ tag.value }}</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="color d-flex flex-wrap flex-column">
+          <label class="form-label fw-medium" for="colorPick">Color</label>
+          <input
+            class="form-control form-control-color"
+            type="color"
+            name="colorPick"
+            id="colorPick"
+            [(ngModel)]="newTodo.backgroundColor"
+          />
+        </div>
+      </div>
+      <button class="btn btn-primary form-control" type="submit">Add</button>
+    </form>
+  </div>
+</div>

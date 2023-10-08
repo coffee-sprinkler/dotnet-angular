@@ -1,0 +1,23 @@
+textarea {
+  height: 8em !important;
+}
+
+.container.mt-5 {
+  width: 100%;
+  max-width: 64vw;
+}
+
+.tags-color {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+@media (max-width: 928px) {
+  .container.mt-5 {
+    max-width: calc(100% - 4rem);
+  }
+  .tags-color {
+    gap: 0.5rem;
+  }
+}
