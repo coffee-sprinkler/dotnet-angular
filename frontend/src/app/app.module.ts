@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { AddtodoComponent } from './components/addtodo/addtodo.component';
 import { UpdatetodoComponent } from './components/updatetodo/updatetodo.component';
+import { HometodoComponent } from './components/hometodo/hometodo.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UpdatetodoComponent } from './components/updatetodo/updatetodo.componen
     TodosComponent,
     AddtodoComponent,
     UpdatetodoComponent,
+    HometodoComponent,
   ],
   imports: [
     CommonModule,

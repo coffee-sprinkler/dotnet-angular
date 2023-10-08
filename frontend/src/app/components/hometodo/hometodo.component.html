@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="home">
+      <a [routerLink]="['/todos']">
+        <span class="material-symbols-outlined"> description </span>
+        Todo List
+      </a>
+    </div>
+    <div class="complete">
+      <a [routerLink]="['/todos']" [queryParams]="{ isDeleted: true }">
+        <span class="material-symbols-outlined"> playlist_add_check </span>
+        Completed Todos
+      </a>
+    </div>
+  </div>
+</div>

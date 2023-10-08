@@ -1,0 +1,37 @@
+.wrapper {
+  margin-top: 1rem;
+  height: 90dvh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.home,
+.tags,
+.complete {
+  border: 2px solid #181817;
+  border-radius: 0.5rem;
+  width: 16rem;
+  height: 16rem;
+}
+
+.home a,
+.tags a,
+.complete a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home span,
+.tags span,
+.complete span {
+  font-size: 3rem;
+}

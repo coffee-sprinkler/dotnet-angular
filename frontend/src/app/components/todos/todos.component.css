@@ -1,5 +1,50 @@
-.container.position-relative {
-  height: 90dvh;
+table {
+  width: 100%;
+}
+
+table,
+td {
+  border-collapse: collapse;
+}
+
+thead {
+  display: table;
+  width: calc(100% - 17px);
+}
+
+tbody {
+  display: block;
+  max-height: 70dvh;
+  overflow-y: scroll;
+}
+
+th,
+td {
+  width: 33.33%;
+  padding: 5px;
+  word-break: break-all;
+}
+
+tr {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 500;
+  border-bottom: 3px solid #fff;
+}
+
+th,
+td {
+  text-align: center;
+  border-left: none;
+}
+
+caption {
+  caption-side: top;
+  text-align: center;
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .v-middle-align {

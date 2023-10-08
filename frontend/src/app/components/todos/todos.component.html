@@ -1,12 +1,21 @@
 <div class="container position-relative mt-3">
-  <div class="row"></div>
   <div class="row d-flex justify-content-around">
     <div class="col">
-      <h2>Tasks</h2>
+      <form class="mx-auto">
+        <input
+          class="form-control"
+          type="text"
+          name="filterTodoText"
+          id="filterTodoText"
+          placeholder="Search todo here..."
+          [(ngModel)]="filterTodoText"
+          (input)="onInputChange()"
+        />
+      </form>
     </div>
-    <div class="col">
+    <div class="col-2">
       <select
-        class="form-select ms-auto w-auto"
+        class="form-select mx-auto w-auto"
         aria-label="Select todo tags"
         (change)="onTagClassSelected($event)"
       >
@@ -21,7 +30,10 @@
     </div>
   </div>
   <div class="row">
-    <table class="table table-responsive">
+    <table>
+      <caption>
+        Todo List
+      </caption>
       <thead>
         <tr>
           <th scope="col">Description</th>
@@ -32,7 +44,10 @@
       <tbody class="table-group-divider">
         <ng-container *ngIf="filteredTodos.length > 0; else emptyState">
           <ng-container *ngFor="let todo of filteredTodos">
-            <tr>
+            <tr
+              [style.backgroundColor]="todo.backgroundColor"
+              [style.color]="getTextColor(todo.backgroundColor)"
+            >
               <td class="v-middle-align">{{ todo.description }}</td>
               <td class="v-middle-align">{{ todo.class }}</td>
               <td class="v-middle-align">

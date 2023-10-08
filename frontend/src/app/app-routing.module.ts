@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodosComponent } from './components/todos/todos.component';
 import { AddtodoComponent } from './components/addtodo/addtodo.component';
 import { UpdatetodoComponent } from './components/updatetodo/updatetodo.component';
+import { HometodoComponent } from './components/hometodo/hometodo.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: TodosComponent,
+    component: HometodoComponent,
   },
   {
     path: 'todos',

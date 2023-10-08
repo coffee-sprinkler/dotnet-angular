@@ -39,6 +39,9 @@ export class AddtodoComponent {
         this.toastr.success('New Todo Added!');
         this.router.navigate(['/todos']);
       },
+      error: (err) => {
+        this.toastr.error('Failed to add new todo. Please try again later.');
+      },
     });
   }
 }
